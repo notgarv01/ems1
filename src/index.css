@@ -1,0 +1,27 @@
+@import "tailwindcss";
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px; /* Horizontal scrollbar ki thickness */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02); /* Track bilkul subtle hona chahiye */
+  border-radius: 10px;
+  margin-inline: 10px; /* Scrollbar ko edges se thoda gap dega */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #6366f1, #a855f7); /* Indigo to Purple Gradient */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Padding effect ke liye */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #4f46e5, #9333ea); /* Hover par thoda dark */
+}
+
+/* Firefox ke liye (limited styling) */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6366f1 rgba(255, 255, 255, 0.02);
+}
