@@ -1,27 +1,75 @@
 @import "tailwindcss";
-/* Custom Scrollbar Styling */
+
+@theme {
+  --color-app-bg: var(--bg-color);
+  --color-card-bg: var(--card-color);
+  --color-surface: var(--surface-color);
+  --color-text-main: var(--text-color);
+  --color-text-sub: var(--text-secondary);
+  --color-border-subtle: var(--border-color);
+}
+
+/* ---------------------------------------------------------
+   LIGHT MODE: "High-End Paper"
+   --------------------------------------------------------- */
+:root {
+  --bg-color: #f8fafc;        /* Slate 50 (Slightly bluish grey) */
+  --card-color: #ffffff;      /* Pure white card */
+  
+  /* DARKER INPUT COLORS FOR LIGHT MODE */
+  --surface-color: #e2e8f0;   /* Slate 200 - Darker grey for inputs */
+  --border-color: #cbd5e1;    /* Slate 300 - Stronger border for definition */
+  
+  --text-color: #0f172a;      /* Slate 900 (Ink) */
+  --text-secondary: #475569;  /* Slate 600 (Muted) */
+  --scrollbar-track: #f1f5f9;
+}
+
+/* ---------------------------------------------------------
+   DARK MODE: "Original Jet Black"
+   --------------------------------------------------------- */
+.dark {
+  --bg-color: #0a0a0a;        /* Your original pitch black */
+  --card-color: #111111;      /* Elevated black */
+  --surface-color: #1c1c1c;   /* Input surfaces */
+  --text-color: #fafafa;      /* Soft white */
+  --text-secondary: #a1a1aa;  /* Muted grey */
+  --border-color: rgba(255, 255, 255, 0.06);
+  --scrollbar-track: rgba(255, 255, 255, 0.02);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  margin: 0;
+}
+
+/* Custom Scrollbar */
+/* --- SCROLLBAR FIX --- */
 .custom-scrollbar::-webkit-scrollbar {
-  height: 6px; /* Horizontal scrollbar ki thickness */
+  width: 5px !important;
+  height: 5px !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02); /* Track bilkul subtle hona chahiye */
-  border-radius: 10px;
-  margin-inline: 10px; /* Scrollbar ko edges se thoda gap dega */
+  background: var(--scrollbar-track) !important;
+  border-radius: 10px !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(to right, #6366f1, #a855f7); /* Indigo to Purple Gradient */
-  border-radius: 10px;
-  border: 2px solid transparent; /* Padding effect ke liye */
+  /* Forge Emerald Theme Gradient */
+  background: linear-gradient(to bottom, #10b981, #06b6d4) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to right, #4f46e5, #9333ea); /* Hover par thoda dark */
+  background: #059669 !important;
 }
 
-/* Firefox ke liye (limited styling) */
+/* Firefox Support */
 .custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #6366f1 rgba(255, 255, 255, 0.02);
+  scrollbar-width: thin !important;
+  scrollbar-color: #10b981 var(--scrollbar-track) !important;
 }

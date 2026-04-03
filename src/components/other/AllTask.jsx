@@ -5,12 +5,15 @@ const AllTask = () => {
   const [userData] = useContext(AuthContext);
 
   return (
-    <div className="mt- mb-8 bg-[#050505] px-4 md:px-10 font-sans">
+    <div className="mt- mb-8 bg-app-bg px-4 md:px-10 font-sans">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 px-2 gap-6">
         <div className="space-y-2">
-          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none">
-            Team Velocity
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-text-main tracking-tight leading-none transition-colors duration-300">
+            Team{" "}
+            <span className="text-emerald-600 dark:text-emerald-500">
+              Velocity
+            </span>
           </h2>
           <p className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
             Real-time performance tracking
@@ -26,14 +29,11 @@ const AllTask = () => {
       </div>
 
       {/* Main Container with Horizontal Scroll Support */}
-      <div className="bg-[#080808] border border-white/5 rounded-[2rem] shadow-2xl overflow-hidden">
-        
+      <div className="bg-card-bg border border-white/5 rounded-[2rem] shadow-2xl overflow-hidden">
         {/* Wrapper for Horizontal Scroll */}
         <div className="overflow-x-auto custom-scrollbar">
-          
           {/* Minimum width ensures columns don't collapse on mobile */}
           <div className="min-w-[700px]">
-            
             {/* Table Header */}
             <div className="grid grid-cols-5 py-6 px-10 bg-white/[0.02] border-b border-white/5 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
               <div className="col-span-1">Team Member</div>
@@ -55,7 +55,7 @@ const AllTask = () => {
                     <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center text-xs font-black text-white group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-all">
                       {elem.firstName.charAt(0)}
                     </div>
-                    <span className="font-bold text-sm md:text-base text-slate-200 group-hover:text-white transition-colors truncate">
+                    <span className="font-bold text-sm md:text-base text-text-main group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-300 truncate tracking-tight">
                       {elem.firstName}
                     </span>
                   </div>

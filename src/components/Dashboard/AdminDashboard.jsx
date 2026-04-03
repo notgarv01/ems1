@@ -5,7 +5,12 @@ import Header from "../other/Header";
 
 const AdminDashboard = (props) => {
   return (
-    <div className="min-h-screen w-full bg-[#050505] p-10">
+    /* 1. bg-app-bg: Uses the dynamic variable from index.css
+       2. text-text-main: Ensures text switches between Slate 900 and White
+       3. transition-colors: Smooth fade effect for the theme switch
+    */
+    <div className="min-h-screen w-full bg-app-bg text-text-main px-10 transition-colors duration-300">
+      
       {/* Navigation & User Info */}
       <Header changeUser={props.changeUser} data={props.data} />
 

@@ -4,18 +4,23 @@ import TaskListNumbers from "../other/TaskListNumbers";
 import TaskList from "../TaskList/TaskList";
 
 const EmployeeDashboard = (props) => {
-  // console.log(props.data);
-  
   return (
-    <div className="min-h-screen w-full bg-[#0a0a0a] text-slate-200 px-6 md:px-10 overflw-y-hidden font-sans selection:bg-red-500/30">
+    <div className="min-h-screen w-full bg-app-bg text-text-main px-6 md:px-10 overflow-y-auto font-sans selection:bg-red-500/30 transition-colors duration-300">
+      
       {/* Header Area */}
       <Header changeUser={props.changeUser} data={props.data} />
 
-      {/* Stats Grid - Refined with subtle gradients and inner borders */}
-      <TaskListNumbers data={props.data}/>
+      {/* Stats Grid */}
+      <div className="mt-6">
+        <TaskListNumbers data={props.data}/>
+      </div>
 
-      {/* Task List - Clean Vertical Stack */}
-      <TaskList data={props.data} />
+      {/* Task List Area */}
+      <div className="mt-10">
+        <TaskList data={props.data} />
+      </div>
+
+      
     </div>
   );
 };

@@ -61,7 +61,7 @@ const App = () => {
     <div className="min-h-screen bg-[#050505]">
       {/* 1. Dashboards (Jab user login ho) */}
       {user === "employee" && (
-        <EmployeeDashboard changeUser={handleLogout} data={loggedInUserData} />
+        <EmployeeDashboard changeUser={handleLogout} data={userData.employees.find(e => e.firstName === loggedInUserData.firstName)} />
       )}
       
       {user === "admin" && (
