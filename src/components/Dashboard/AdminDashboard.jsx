@@ -9,7 +9,7 @@ const AdminDashboard = (props) => {
        2. text-text-main: Ensures text switches between Slate 900 and White
        3. transition-colors: Smooth fade effect for the theme switch
     */
-    <div className="min-h-screen w-full bg-app-bg text-text-main px-10 transition-colors duration-300">
+    <div className="min-h-screen w-full bg-app-bg text-text-main px-3 transition-colors duration-300">
       
       {/* Navigation & User Info */}
       <Header changeUser={props.changeUser} data={props.data} />
